@@ -1,0 +1,121 @@
+<div id="container">
+    <div class="nav-bar">
+        <div class="logo-container">
+            <div class="logo">
+                <img src="./assets/nuera-icon.svg" alt="Logo" />
+            </div>
+            <span class="logo-text">Nuera</span>
+        </div>
+        <div class="nav-links">
+            <div class="chat-container hidden" data-tooltip="New Chat" aria-label="New Chat">
+                <img src="./assets/new-chat.svg" alt="Chat" />
+            </div>
+            <div class="history-container" data-tooltip="History" aria-label="History">
+                <img src="./assets/history.svg" alt="History" />
+            </div>
+            <div class="reminders-container" data-tooltip="Reminders" aria-label="Reminders">
+                <img src="./assets/bell-simple-ringing.svg" alt="Reminders" />
+            </div>
+            <div class="theme-toggle" data-tooltip="Toggle Theme" aria-label="Toggle Theme">
+                <img id="theme-icon" src="./assets/sun.svg" alt="Theme" />
+            </div>
+            <div class="account-container" data-tooltip="Account" aria-label="Account">
+                <div class="profile-pic">
+                    <img src="./assets/user.svg" alt="Profile" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="chat-window">
+        <div class="messages" aria-live="polite">
+            <div class="ai-message greeting"><span class="greeting-title">hey there</span><br /><span
+                    class="greeting-subtitle">How can I help you today?</span></div>
+        </div>
+        <div class="input-area">
+            <textarea id="chat-input" placeholder="Type your message..." aria-label="Type your message"></textarea>
+            <button id="send-button" aria-label="Send message or use voice">
+                <img id="button-icon" src="./assets/microphone.svg" alt="Mic" />
+            </button>
+        </div>
+    </div>
+    <div id="account-popup" class="popup" role="dialog" aria-modal="true">
+        <div class="popup-content account-menu">
+            <div class="menu-item profile-item">
+                <div>Profile</div>
+            </div>
+            <div class="menu-item settings-item">
+                <div>Settings</div>
+            </div>
+            <div class="menu-item signout-item">
+                <div>Sign Out</div>
+            </div>
+        </div>
+    </div>
+    <div id="reminders-popup" class="popup" role="dialog" aria-modal="true">
+        <div class="popup-content centered">
+            <div class="reminder-header">
+                <h2>Reminders</h2>
+                <span class="close-popup" aria-label="Close">✖</span>
+            </div>
+            <div class="add-reminder-section">
+                <div class="input-group text-group">
+                    <img src="./assets/note-pencil.svg" alt="Note" class="input-icon" />
+                    <input type="text" id="reminder-text" placeholder="Reminder description"
+                        aria-label="Reminder description" />
+                    <div class="error-message" id="reminder-text-error"></div>
+                </div>
+                <div class="input-group date-group">
+                    <img src="./assets/calendar.svg" alt="Date" class="input-icon" />
+                    <input type="text" id="reminder-date" placeholder="Select date" aria-label="Select date" />
+                    <div class="error-message" id="reminder-date-error"></div>
+                </div>
+                <div class="input-group time-group">
+                    <img src="./assets/clock.svg" alt="Time" class="input-icon" />
+                    <input type="text" id="reminder-time" placeholder="Select time" aria-label="Select time" />
+                    <div class="error-message" id="reminder-time-error"></div>
+                </div>
+            </div>
+            <div class="reminder-footer">
+                <button id="add-reminder-btn" aria-label="Add Reminder">Add</button>
+                <button id="clear-completed-btn" aria-label="Clear Completed Reminders">Clear Completed</button>
+            </div>
+            <div class="separator"></div>
+            <div id="reminders-list" class="reminders-list"></div>
+        </div>
+    </div>
+    <div id="history-popup" class="popup" role="dialog" aria-modal="true">
+        <div class="popup-content centered">
+            <div class="history-header">
+                <h2>Chat History</h2>
+                <span class="close-popup" aria-label="Close">✖</span>
+            </div>
+            <div class="search-bar">
+                <input id="history-search" placeholder="Search chat history" aria-label="Search chat history" />
+                <img src="./assets/magnifying-glass.svg" alt="Search" class="search-icon" />
+            </div>
+            <div class="separator"></div>
+            <div class="chat-groups"></div>
+        </div>
+    </div>
+    <div id="voice-popup" class="popup" role="dialog" aria-modal="true">
+        <div class="popup-content centered" >
+            <div class="voice-interface">
+                <div class="mic-animation" >
+                    <div class="mic-wave wave1"></div>
+                    <div class="mic-wave wave2"></div>
+                    <div class="mic-wave wave3"></div>
+                    <img src="./assets/microphone.svg" alt="Mic" class="mic-icon" />
+                    <div class="audio-visualizer">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
+                </div>
+                <p id="voice-status">Listening...</p>
+                <button id="stop-voice-btn" aria-label="Stop Voice Interaction">Stop</button>
+            </div>
+        </div>
+    </div>
+</div>
