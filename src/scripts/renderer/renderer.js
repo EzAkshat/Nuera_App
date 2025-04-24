@@ -4,7 +4,6 @@ import { initChat } from '../../scripts/modules/chatManager.js';
 import { initReminders } from '../../scripts/modules/reminderManager.js';
 import { initTheme } from '../../scripts/modules/themeManager.js';
 initTheme();
-localStorage.setItem('authToken', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZmQ0MDE2ZTEyOWQ2NGI5NDJhMzBmNSIsImVtYWlsIjoiYWtzaGF0bmFpazA5MDRAZ21haWwuY29tIiwiaWF0IjoxNzQ1MzIxNTYwLCJleHAiOjE3NDU2ODE1NjB9.I0VurShWz4uX9vZjaRLZTNwYEAFE63NMubct6SAbtiA');
 
 // On load, decide whether to show login or homepage
 window.onload = async () => {
