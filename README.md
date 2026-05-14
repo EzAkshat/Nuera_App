@@ -1,157 +1,134 @@
-# Nuera Desktop App
+<div align="center">
 
-<p align="center">
-  <img src="./assets/nuera-icon.svg" width="120" alt="Nuera Logo"/>
-</p>
+# ✦ Nuera
 
-<p align="center">
-  <b>An AI-powered desktop assistant built with Electron.</b>
-</p>
+**AI-Powered Desktop Assistant**
 
-<p align="center">
-  Real-time AI chat • Voice commands • Reminders • Authentication • WebSockets
-</p>
+Real-time AI chat · Voice interaction · Smart reminders · WebSockets · Secure auth
 
----
+<br/>
 
-# ✨ Features
+[![Electron](https://img.shields.io/badge/Electron-35.x-47848F?style=flat-square&logo=electron&logoColor=white)](https://www.electronjs.org/)
+[![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=flat-square&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+[![Node.js](https://img.shields.io/badge/Node.js-Backend-339933?style=flat-square&logo=node.js&logoColor=white)](https://nodejs.org/)
+[![License](https://img.shields.io/badge/License-ISC-blue?style=flat-square)](./LICENSE)
 
-## 🤖 AI Chat
-- Real-time conversations with AI
-- Markdown-rendered responses
-- Syntax-highlighted code blocks
-- Chat history management
-
-## 🎤 Voice Interaction
-- Voice input support
-- Wake-word detection using Picovoice Porcupine
-- Speech-to-text integration
-- Audio playback support
-
-## 🔔 Smart Reminders
-- Create and manage reminders
-- Desktop notifications
-- Real-time reminder updates
-
-## 🔐 Authentication
-- Secure login flow
-- Deep-link authentication support
-- Token-based session management
-
-## ⚡ Real-Time Communication
-- WebSocket-powered live updates
-- Instant AI responses
-- Real-time reminder synchronization
-
-## 🎨 Modern UI
-- Dark/Light theme support
-- Responsive desktop interface
-- Smooth animations
-- Clean user experience
+</div>
 
 ---
 
-# 🛠️ Tech Stack
+## Overview
+
+Nuera is a modern desktop assistant that brings AI-powered conversations, hands-free voice control, and smart reminders directly to your desktop — built on Electron with a clean modular architecture and real-time WebSocket communication.
+
+---
+
+## Features
+
+| | Feature | Description |
+|---|---|---|
+| 🤖 | **AI Conversations** | Real-time chat with markdown rendering and syntax-highlighted code blocks |
+| 🎤 | **Voice Assistant** | Wake-word detection via Porcupine with full speech-to-text integration |
+| 🔔 | **Smart Reminders** | Create and manage reminders with native desktop notifications |
+| 🔐 | **Secure Auth** | Deep-link authentication flow with JWT token-based sessions |
+| ⚡ | **Real-Time Updates** | WebSocket-based communication for instant, persistent AI responses |
+| 🎨 | **Modern UI** | Dark & light themes with smooth animations and native desktop integration |
+
+---
+
+## Tech Stack
 
 | Technology | Purpose |
 |---|---|
-| Electron | Desktop application framework |
-| JavaScript | Frontend logic |
-| WebSockets | Real-time communication |
-| Axios | API requests |
-| Marked | Markdown rendering |
-| PrismJS | Syntax highlighting |
-| DOMPurify | HTML sanitization |
-| Porcupine | Wake-word detection |
+| [Electron](https://electronjs.org) | Desktop application framework |
+| [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API) | Real-time bidirectional communication |
+| [Axios](https://axios-http.com) | HTTP API requests |
+| [PrismJS](https://prismjs.com) | Syntax highlighting |
+| [Marked](https://marked.js.org) | Markdown rendering |
+| [DOMPurify](https://github.com/cure53/DOMPurify) | HTML sanitization |
+| [Porcupine](https://picovoice.ai/platform/porcupine/) | Wake-word detection |
+| [UUID](https://github.com/uuidjs/uuid) | Unique identifier generation |
 
 ---
 
-# 📂 Project Structure
+## Project Structure
 
-```bash
+```
 Nuera_App/
-├── assets/                 # Icons and SVG assets
-├── lib/                    # External libraries
+├── assets/                  # Icons & SVG assets
+├── screenshots/             # Application previews
+├── lib/                     # Third-party libraries
 ├── src/
-│   ├── components/         # HTML components/pages
+│   ├── components/          # HTML pages & UI components
 │   ├── scripts/
-│   │   ├── modules/        # Core application modules
-│   │   └── renderer/       # Electron renderer logic
-│   └── stylesheet/         # CSS styles
-├── index.html              # Main application entry
-├── main.js                 # Electron main process
-├── package.json
-└── README.md
+│   │   ├── modules/         # Core application modules
+│   │   └── renderer/        # Electron renderer process
+│   └── stylesheet/          # Application styles
+├── index.html               # Main application entry
+├── main.js                  # Electron main process
+└── package.json
 ```
 
 ---
 
-# 🧠 Core Modules
+## Core Modules
 
-| Module | Description |
+| Module | Responsibility |
 |---|---|
-| `chatManager.js` | Handles AI conversations |
-| `reminderManager.js` | Reminder management |
-| `websocket.js` | Real-time communication |
-| `audio-processor.js` | Voice/audio processing |
-| `themeManager.js` | Theme switching |
-| `uiManager.js` | UI rendering and updates |
-| `pageManager.js` | Dynamic page loading |
-| `api.js` | Backend API communication |
+| `chatManager.js` | AI conversation lifecycle and state management |
+| `reminderManager.js` | Reminder creation, scheduling, and notifications |
+| `audio-processor.js` | Voice input handling and audio stream processing |
+| `websocket.js` | Real-time bidirectional communication layer |
+| `themeManager.js` | Dark/light theme switching and persistence |
+| `uiManager.js` | UI rendering, updates, and DOM management |
+| `pageManager.js` | Dynamic page loading and navigation routing |
+| `api.js` | Backend communication and request abstraction |
 
 ---
 
-# 🔗 Backend Services
+## Authentication Flow
 
-Nuera works with:
+Nuera uses a custom protocol for secure, seamless deep-link authentication.
 
-- **Nuera Backend**
-  - AI processing
-  - Chat handling
-  - Reminder scheduling
-  - WebSocket services
+```
+Browser Login  →  Deep-Link Callback  →  Code Exchange  →  JWT Token  →  Session
+```
 
-- **Nuera Auth**
-  - Authentication
-  - Token exchange
-  - Deep-link login flow
-
----
-
-# 🔐 Authentication Flow
-
-Nuera uses custom protocol deep-linking:
-
-```bash
+```
 nuera://callback?code=AUTH_CODE
 ```
 
-The app exchanges the authentication code for a JWT token through the authentication server.
+The app exchanges the authorization code for a JWT token through the authentication server — no passwords are ever stored locally.
 
 ---
 
-# 🚀 Installation
+## Backend Ecosystem
 
-## Clone Repository
+Nuera connects to two backend services:
+
+**Nuera Backend** — Handles AI processing, chat APIs, reminder scheduling, WebSocket services, and audio generation.
+
+**Nuera Auth** — Handles authentication, OAuth/token exchange, and the deep-link login flow.
+
+---
+
+## Getting Started
+
+**Clone and install**
 
 ```bash
 git clone https://github.com/EzAkshat/Nuera_App.git
 cd Nuera_App
-```
-
-## Install Dependencies
-
-```bash
 npm install
 ```
 
-## Start Development Server
+**Run in development**
 
 ```bash
 npm start
 ```
 
-## Build Application
+**Build for distribution**
 
 ```bash
 npm run build
@@ -159,9 +136,7 @@ npm run build
 
 ---
 
-# 📦 Dependencies
-
-## Main Dependencies
+## Dependencies
 
 ```json
 {
@@ -177,90 +152,37 @@ npm run build
 
 ---
 
-# 🖥️ Electron Features
+## Security
 
-- Single-instance app lock
-- Native desktop notifications
-- External link handling
-- Dynamic HTML page loading
+- Context isolation enabled in Electron
 - Secure preload scripts
-- Context isolation enabled
+- Content Security Policy (CSP) enforced
+- Sanitized HTML rendering via DOMPurify
+- External link protection
 
 ---
 
-# 🎨 UI Features
+## Roadmap
 
-- Markdown support
-- Syntax-highlighted AI responses
-- Flatpickr calendar integration
-- Theme switching
-- Responsive layouts
-
----
-
-# 🔔 Notification System
-
-Nuera supports native desktop notifications for:
-- Reminder alerts
-- AI-triggered events
-- Real-time updates
+- [ ] Offline AI support
+- [ ] AI memory system
+- [ ] Cross-platform auto-updates
+- [ ] Plugin architecture
+- [ ] Cloud synchronization
+- [ ] Full voice assistant mode
 
 ---
 
-# 📡 WebSocket Support
+## License
 
-Supported live channels:
-- AI chat updates
-- Reminder synchronization
-- Voice transcription streams
+Licensed under the [ISC License](./LICENSE).
 
 ---
 
-# 🔒 Security Features
+<div align="center">
 
-- Content Security Policy (CSP)
-- Context isolation
-- Sanitized HTML rendering
-- Secure protocol handling
+Built with passion by **Akshat**
 
----
+If you find Nuera useful, consider giving it a ⭐
 
-# 📸 Screenshots
-
-## 🏠 Home Screen
-
-![Home Screen](./screenshots/home.png)
-
----
-
-## 💬 Chat Interface
-
-![Chat Interface](./screenshots/chat.png)
----
-
-# 🧪 Future Improvements
-
-- Multi-platform installers
-- Offline AI support
-- Voice assistant mode
-- AI memory system
-- Plugin architecture
-- Cloud synchronization
-
----
-
-# 👨‍💻 Author
-
-**Akshat**
-
----
-
-# 📄 License
-
-This project is licensed under the ISC License.
-
----
-
-# ⭐ Support
-
-If you like this project, consider giving it a star ⭐
+</div>
