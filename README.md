@@ -10,7 +10,7 @@
   <img src="https://img.shields.io/badge/Electron-35.x-000?style=flat-square&logo=electron&logoColor=4ade80&labelColor=111" />
   <img src="https://img.shields.io/badge/JavaScript-ES6+-000?style=flat-square&logo=javascript&logoColor=F7DF1E&labelColor=111" />
   <img src="https://img.shields.io/badge/Node.js-000?style=flat-square&logo=node.js&logoColor=4ade80&labelColor=111" />
-  <img src="https://img.shields.io/badge/License-ISC-000?style=flat-square&labelColor=111" />
+  <img src="https://img.shields.io/badge/License-MIT-000?style=flat-square&labelColor=111" />
 </p>
 
 <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=16&pause=2000&color=6B7280&center=true&vCenter=true&repeat=true&width=500&lines=AI+Chat+%2B+Voice+%2B+Smart+Reminders;Built+on+Electron+%2B+WebSockets;Wake-word+Detection+via+Porcupine;Dark+%26+Light+Theme+Support" alt="Typing SVG" />
